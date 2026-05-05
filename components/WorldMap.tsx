@@ -69,7 +69,13 @@ export function WorldMap({ selectedCode, onSelect, baseCurrency }: Props) {
     if (controls) {
       controls.autoRotate = false;
       controls.enableZoom = false;
+      controls.enablePan = false;
       controls.rotateSpeed = 0.4;
+      // On touch devices, require two-finger gesture to rotate, freeing one-finger swipes for page scroll
+      controls.touches = {
+        ONE: 0,    // 0 = no action on single touch
+        TWO: 2,    // 2 = ROTATE on two-finger touch
+      };
     }
   }, [polygons.length]);
 

@@ -76,10 +76,7 @@ export default function Home() {
                 Drag to rotate · click a country to compare
               </p>
             </div>
-            <div
-              className="relative w-full"
-              style={{ height: 'calc(100vh - 250px)', minHeight: '700px' }}
-            >
+            <div className="relative w-full h-[60vh] lg:h-[calc(100vh-250px)] lg:min-h-[700px] lg:max-h-[900px]">
               <WorldMap
                 selectedCode={selectedCountry}
                 onSelect={setSelectedCountry}
