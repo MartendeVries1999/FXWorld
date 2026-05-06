@@ -10,6 +10,7 @@ import { COUNTRY_BY_CODE, BASE_CURRENCIES } from '@/lib/countries';
 import { Card } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import Link from 'next/link';
 
 export default function Home() {
   const [base, setBase] = useState('EUR');
@@ -27,12 +28,16 @@ export default function Home() {
       {/* Top bar */}
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-              FX World
-            </span>
-            <span className="text-xs text-muted-foreground/60">— Live exchange rates</span>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+                FX World
+              </span>
+            </div>
+            <Link href="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              Blog
+            </Link>
           </div>
           <div className="flex items-center gap-3">
             <div className="text-right">
